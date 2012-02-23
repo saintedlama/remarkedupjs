@@ -1,0 +1,18 @@
+{
+  "author": "Christoph Walcher <christoph.walcher@gmail.com>",
+  "name": "remarkedup",
+  "description": "Markup to html converter that adds features such as nice typography and TOC",
+  "version": "0.1.0",
+  "homepage": "http://github.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com.git"
+  },
+  "main": "/bin/remarkedup",
+  "engines": {
+    "node": "~0.6.11"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
