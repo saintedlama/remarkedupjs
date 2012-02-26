@@ -1,4 +1,4 @@
-var GenerateCommand = require('../lib/generate-command.js');
+var GenerateCommand = require('../lib/generator.js');
 
 exports.shouldExtractTreeToc = function(test) {
     var command = new GenerateCommand.GenerateMarkdownCommand();

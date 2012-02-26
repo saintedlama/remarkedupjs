@@ -1,4 +1,4 @@
-var fsUtil = require('../lib/fs-util');
+var fsUtil = require('../lib/utils.js');
 
 exports.shouldReturnNullInCaseTheFileWasNotFound = function (test) {
     var filename = fsUtil.discoverFileSync('file', 'dir', 'dir2');
