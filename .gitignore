@@ -2,3 +2,8 @@
 .sass-cache/
 progress/
 .idea/
+*~
+examples/*.html
+node_modules/
+*.tgz
+*.swp
