@@ -1,15 +1,18 @@
 {
   "author": "Christoph Walcher <christoph.walcher@gmail.com>",
   "name": "remarkedup",
-  "description": "Markup to html converter that adds features such as nice typography and TOC",
-  "version": "0.1.1",
-  "homepage": "http://github.com",
+  "description": "Markdown to html converter that adds features such as nice typography and table of contents generation",
+  "version": "0.2.0",
+  "homepage": "https://github.com/saintedlama/remarkedupjs",
   "repository": {
     "type": "git",
     "url": "git://github.com.git"
   },
   "main": "./bin/remarkedup",
   "bin": { "remarkedup": "./bin/remarkedup.js" },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --reporter spec"	
+  },
   "engines": {
     "node": "~0.6.11"
   },
@@ -17,10 +20,11 @@
     "commander": "0.5.x",
     "wrench": "1.3.x",
     "github-flavored-markdown": "1.0.x",
-    "bind": "0.1.x",
-    "glob": "3.0.x"
+    "glob": "3.0.x",
+    "Templ8":  "0.7.x"
   },
   "devDependencies": {
-    "nodeunit": "0.7.x"
+    "mocha": "0.14.x",
+    "should": "0.6.x"
   }
 }
