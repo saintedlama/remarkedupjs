@@ -1,6 +1,5 @@
 test/
 examples/
-templates/
 node_modules/
 *.tgz
 *~
