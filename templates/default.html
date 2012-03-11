@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>(:title:)</title>
+    <title>{{title}}</title>
     <style type="text/css" media="screen">
         /* CSS Resets */
         html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -131,8 +131,23 @@
             padding-right: 1.5em;
             color: #333;
         }
-        p > br.pagebreak {
-            page-break-after: always;
+
+        /* toc */
+        .toc ul {
+            list-style: square;
+        }
+        .toc li.level_1 {
+            font-size: 19px;
+        }
+        .toc li.level_2 {
+            font-size: 17px;
+        }
+        .toc li.level_3 {
+            font-size: 15px;
+        }
+        .toc a, .toc a:visited {
+            color: #333;
+            text-decoration: none;
         }
     </style>
     <style type="text/css" media="print">
@@ -141,9 +156,35 @@
 </head>
 <body>
 <div class="container">
-    <div class="span-{1} prepend-{0} append-{2} last">
-        (:content:)
-    </div>
+
+    <section class="toc">
+        <h1>Table of Contents</h1>
+        <ul>
+            {% for node in toc %}
+                <li class="level_1">
+                    <a href="#{{node.id}}">{{node.title}}</a>
+                    <ul>
+                    {% for subnode in node.nodes %}
+                        <li class="level_2">
+                            <a href="#{{subnode.id}}">{{subnode.title}}</a>
+                            <ul>
+                            {% for subsubnode in subnode.nodes %}
+                                <li class="level_3">
+                                    <a href="#{{subsubnode.id}}">{{subsubnode.title}}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr />
+    <section class="content">
+        {{content}}
+    </section>
 </div>
 </body>
 </html>
