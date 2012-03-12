@@ -2,7 +2,7 @@
   "author": "Christoph Walcher <christoph.walcher@gmail.com>",
   "name": "remarkedup",
   "description": "Markdown to html converter that adds features such as nice typography and table of contents generation",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/saintedlama/remarkedupjs",
   "repository": {
     "type": "git",
