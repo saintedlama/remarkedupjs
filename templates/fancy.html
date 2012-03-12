@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <style type="text/css" media="screen">
+        /* CSS Resets */
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0;
+            margin: 0;
+            padding: 0
+        }
+
+        article, aside, figure, figure img, figcaption, hgroup, footer, header, nav, section, video, object {
+            display: block
+        }
+
+        a img {
+            border: 0
+        }
+
+        figure {
+            position: relative
+        }
+
+        figure img {
+            width: 100%
+        }
+
+        /* Centered layout */
+        .container {
+            width: 100%;
+            max-width: 640px;
+            min-width: 480px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Typography */
+        /*
+          960 Grid System ~ Text CSS.
+          Learn more ~ http://960.gs/
+          Licensed under GPL and MIT.
+        */
+
+        /* `Basic HTML
+        ----------------------------------------------------------------------------------------------------*/
+        body {
+            font: 16px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #222;
+        }
+
+        pre,
+        code {
+            font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+        }
+        pre {
+            font-size: 12px;
+        }
+        hr {
+            border: 0 #ccc dotted;
+            border-top-width: 1px;
+            clear: both;
+            height: 0;
+        }
+
+        /* `Headings
+        ----------------------------------------------------------------------------------------------------*/
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, Times, serif;
+            font-weight: normal;
+            border: 0 #ccc solid;
+            border-bottom-width: 1px;
+        }
+        h1 {
+            font-size: 29px;
+        }
+
+        h2 {
+            font-size: 27px;
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        h4 {
+            font-size: 23px;
+        }
+
+        h5 {
+            font-size: 21px;
+        }
+
+        h6 {
+            font-size: 19px;
+        }
+
+        /* Spacing
+        ----------------------------------------------------------------------------------------------------*/
+        ol {
+            list-style: decimal;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        li {
+            margin-left: 30px;
+        }
+
+        p,
+        dl,
+        hr,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ol,
+        ul,
+        pre,
+        table,
+        address,
+        fieldset,
+        figure {
+            margin-bottom: 20px;
+        }
+        p + p {
+            margin-top: -1.0em;
+        }
+        blockquote {
+            font-style: italic;
+            font-size: 1.2em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+            color: #333;
+        }
+
+        /* TOC
+        ----------------------------------------------------------------------------------------------------*/
+        .toc ul {
+            list-style: upper-roman;
+        }
+        .toc li.level_1 {
+            font-size: 19px;
+        }
+        .toc li.level_2 {
+            font-size: 17px;
+        }
+        .toc li.level_3 {
+            font-size: 15px;
+        }
+        .toc a, .toc a:visited {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+    <style type="text/css" media="print">
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <section class="toc">
+        <h1>Table of Contents</h1>
+        <ul>
+            {% for node in toc %}
+                <li class="level_1">
+                    <a href="#{{node.id}}">{{node.title}}</a>
+                    <ul>
+                    {% for subnode in node.nodes %}
+                        <li class="level_2">
+                            <a href="#{{subnode.id}}">{{subnode.title}}</a>
+                            <ul>
+                            {% for subsubnode in subnode.nodes %}
+                                <li class="level_3">
+                                    <a href="#{{subsubnode.id}}">{{subsubnode.title}}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr />
+    <section class="content">
+        {{content}}
+    </section>
+</div>
+</body>
+</html>
