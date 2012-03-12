@@ -4,11 +4,11 @@ var program = require('commander'),
     batchGenerate = require('../lib/batch-generate.js'),
     processToc = require('../lib/process-toc.js');
 
-program.version('0.1.0')
+program.version('0.2.1')
     .description('parses markdown files and transforms them to html.')
     .option('-i, --input <glob>', 'input file or path')
     .option('-o, --output <path>', 'output path')
-    .option('-t, --template', 'html template file to use')
+    .option('-t, --template <template>', 'html template file to use')
     .option('-w, --watch', 'watch files for modification and regenerate html output');
 
 program.parse(process.argv);
