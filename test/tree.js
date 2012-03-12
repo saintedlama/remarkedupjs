@@ -20,18 +20,20 @@ describe('Tree', function () {
     });
 
     describe('#add', function () {
-        it('should create linked child node', function () {
+        it('should create linked child node', function (done) {
             var root = new Tree();
             var childNode = root.add();
 
             childNode.parent.should.equal(root);
+            done();
         });
 
-        it('should create child node with node level plus 1', function () {
+        it('should create child node with node level plus 1', function (done) {
             var root = new Tree();
             var childNode = root.add();
 
             childNode.level.should.equal(root.level + 1);
+            done();
         });
     });
 
@@ -66,7 +68,7 @@ describe('Tree', function () {
             done();
         });
 
-        it('should find parent node by node level', function() {
+        it('should find parent node by node level', function(done) {
             var root = new Tree();
             var secondChild = root.add().add();
             var foundNode = secondChild.find(function(node) {
@@ -74,6 +76,7 @@ describe('Tree', function () {
             });
 
             foundNode.should.equal(root);
+            done();
         });
     });
 });

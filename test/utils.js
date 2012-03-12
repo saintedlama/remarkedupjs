@@ -1,6 +1,6 @@
 var utils = require('../lib/utils'),
     should = require('should'),
-    shouldThrow = require('./throws');
+    support = require('./support');
 
 describe('utils', function() {
 
@@ -18,7 +18,7 @@ describe('utils', function() {
         });
 
         it('should throw in case no file passed', function (done) {
-            shouldThrow(function() {
+            support.throws(function() {
                 utils.discoverFileSync();
             });
             done();
@@ -35,7 +35,7 @@ describe('utils', function() {
 
     describe('#changeExtension()', function() {
         it('should throw in case no file was passed', function(done) {
-            shouldThrow(function() {
+            support.throws(function() {
                 utils.changeExtension();
             });
             done();
@@ -54,7 +54,7 @@ describe('utils', function() {
         });
 
         it('should throw in case no extension was passed', function(done) {
-            shouldThrow(function() {
+            support.throws(function() {
                 utils.changeExtension('filename');
             });
             done();
