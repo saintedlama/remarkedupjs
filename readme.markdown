@@ -1,5 +1,8 @@
 # About
 Remarkedup generates HTML using customizable templates from markdown adding features such as (hopefully) nice typography and table of contents.
+
+# Build Status
+[![Build Status](https://secure.travis-ci.org/saintedlama/remarkedupjs.png?branch=master)](http://travis-ci.org/saintedlama/remarkedupjs)
  
 # Installation
 Remarkedup can be installed via npm
